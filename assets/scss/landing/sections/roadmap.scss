@@ -1,0 +1,154 @@
+.roadmap {
+    padding-top: 83px;
+    padding-bottom: 40px;
+    background: 
+        url(../img/landing/roadmapWaves.png)no-repeat left calc(50%) top 442px / auto,
+        url(../img/landing/roadmapBg.png)no-repeat right calc(50% - 197px) top 50px / auto;
+
+    &__filterList {
+        display: flex;
+        margin-top: 36px;
+    }
+
+    &__labelFilter {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 26px;
+        cursor: pointer;
+        margin-right: 12px;
+    }
+
+    &__filterName {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 10px;
+        color: #A1A0AE;
+    }
+
+    input[name="filter"]:checked + span {
+        background: #1F262A;
+        color: #fff;
+    }
+
+    &__year {
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 700;
+    }
+
+    &__text {
+        font-size: 12px;
+        color: #A1A0AE;
+        line-height: 20px;
+        width: 200px;
+        margin-top: 21px;
+    }
+
+    &__content {
+        justify-content: space-between;
+        margin-top: 30px;
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__quarter {
+        width: 25%;
+        position: relative;
+
+        &_1,
+        &_3 {
+            margin-top: 366px;
+        }
+
+        &.disabled {
+            color: #58585C;
+            .roadmap__text {
+                color: #58585C;
+            }
+        }
+    }
+
+    &__textItem {
+        font-size: 12px;
+        color: #A1A0AE;
+        line-height: 20px;
+    }
+
+    &__textList {
+        width: 200px;
+    }
+
+    &__textItem {
+        padding-left: 20px;
+        margin-top: 5px;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: $mainLinearGradient;
+            position: absolute;
+            top: 7px;
+            left: 0;
+        }
+    }
+
+    &__line {
+        position: absolute;
+        height: 114px;
+        width: 1px;
+        background: #fff;
+
+        &_1,
+        &_3 {
+            top: -130px;
+        }
+
+        &_2,
+        &_4 {
+            top: 148px;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 29px;
+            height: 29px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .25);
+            left: 50%;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 13px;
+            height: 13px;
+            background: #fff;
+            border-radius: 50%;
+            left: 50%;
+        }
+
+        &_1::before,
+        &_3::before,
+        &_1::after,
+        &_3::after {
+            top: 0;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        &_2::before,
+        &_4::before,
+        &_2::after,
+        &_4::after {
+            bottom: 0;
+            transform: translateX(-50%) translateY(50%);
+        }
+    }
+}

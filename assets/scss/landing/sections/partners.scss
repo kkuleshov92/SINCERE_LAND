@@ -1,0 +1,33 @@
+.partners {
+    padding-top: 169px;
+    padding-bottom: 100px;
+    background: url(../img/landing/bg-light.png) no-repeat top calc(50% + 20px) left calc(50% - 50px)/800px;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 69px;
+    }
+
+    &__img {
+        filter: grayscale(1);
+        transition: .3s;
+    }
+
+    &__item {
+        flex-basis: 25%;
+        padding-right: 30px;
+
+        &:hover {
+            .partners__img {
+                filter: grayscale(0);
+            }
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 20px;
+        margin-top: 29px;
+    }
+}

@@ -1,0 +1,105 @@
+.team {
+    padding-top: 49px;
+    padding-bottom: 40px;
+    background: url(../img/landing/bg-light.png) no-repeat left calc(50% + 350px) top -250px / 800px;
+
+    &__filterList {
+        display: flex;
+        margin-top: 36px;
+    }
+
+    &__labelFilter {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 26px;
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+    &__filterName {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 10px;
+        color: #A1A0AE;
+    }
+
+    &__radio:checked + span {
+        background: #1F262A;
+        color: #fff;
+    }
+
+    &__item {
+        width: 200px;
+        padding-right: 50px;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__imgBox {
+        height: 190px;
+        position: relative;
+    }
+
+    &__imgPhoto {
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        z-index: 2;
+    }
+
+    &__imgCircle {
+        position: absolute;
+        bottom: 3px;
+        left: 1px;
+        z-index: 1;
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    &__text {
+        color: #A1A0AE;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-top: 30px;
+    }
+
+    &__person {
+        display: flex;
+        flex-direction: column;
+        text-indent: 17px;
+        position: relative;
+        margin-top: 26px;
+
+        &::before {
+            content: '';
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: $mainLinearGradientUp;
+            width: 2px;
+            border-radius: 2px;
+            position: absolute;
+        }
+    }
+
+    &__name {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+    }
+
+    &__position {
+        color: #8F8E9F;
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+}

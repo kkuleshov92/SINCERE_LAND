@@ -1,0 +1,136 @@
+.priorities {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background: url(../img/landing/prioritiesBg.png) no-repeat left calc(50% + 197px) bottom 0px / auto;
+
+    &__title {
+        width: 250px;
+    }
+
+    &__main {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__left,
+    &__right {
+        width: 50%;
+    }
+
+    &__left {
+        padding-top: 95px;
+    }
+
+    &__list {
+        margin-top: 177px;
+        width: 200px;
+    }
+
+    &__item {
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+        margin-top: 22px;
+    }
+
+    &__input {
+
+        &:checked~.priorities__radio .priorities__radioCenter {
+            display: block;
+        }
+
+        &:checked~.priorities__kind {
+            color: #fff;
+        }
+    }
+
+    &__radio {
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        background: #1F262A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__radioCenter {
+        width: 14px;
+        height: 14px;
+        background: $mainLinearGradient;
+        transform: rotate(-28.68deg);
+        display: none;
+        border-radius: 50%;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__kind {
+        margin-left: 23px;
+        color: #8F8E9F;
+    }
+
+    &__info {
+        margin-top: 380px;
+        position: relative;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__content {
+        font-size: 14px;
+        background: rgba(31, 38, 42, 0.7);
+        backdrop-filter: blur(5px);
+        padding: 15px 117px 14px 22px;
+        line-height: 26px;
+        position: relative;
+
+        &::before {
+            content: '';
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: $mainLinearGradientUp;
+            width: 2px;
+            border-radius: 2px;
+            position: absolute;
+        }
+    }
+
+    &__imageBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: -118px;
+        left: -12px;
+    }
+
+    &__btn {
+        position: absolute;
+        right: 20px;
+        top: -20px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: linear-gradient(46.4deg, #3A26A9 14.15%, #3C49E1 46.2%, #01E6F0 82.52%);
+
+        &::after {
+            background: url(../img/landing/arrowBtn.svg)no-repeat center center / auto;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+}

@@ -1,0 +1,180 @@
+.header {
+    border-bottom: 1px solid #272727;
+    background: #030303;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+
+    .container_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1152px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+        position: relative;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        font-size: 0;
+    }
+
+    &__name {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1;
+        margin-left: 10px;
+        transition: all .3s ease-in-out;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-top: -3px;
+    }
+
+    &__link {
+        margin-right: 29px;
+        color: #8F8E9F;
+        transition: all .3s ease-in-out;
+        font-weight: 600;
+        line-height: 19px;
+        font-size: 14px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &__connect {
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 600;
+        width: 176px;
+        height: 36px;
+        border-radius: 20px;
+        border: 1px solid rgba(124, 124, 124, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease-in-out;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    &__scrollLine {
+        position: absolute;
+        height: 1px;
+        width: 0%;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, #3829AA 0%, #3C49E1 27.51%, #2CFAFC 47.09%, #F7AEF9 75.66%, #F72074 101.58%);
+    }
+}
+
+.header__link:active {
+    transform: scale(.95);
+}
+
+.select {
+    margin-right: 30px;
+    position: relative;
+
+    &:hover {
+        border-color: #fff;
+    }
+
+    &__current {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+        height: 26px;
+        width: 26px;
+        border: 1px solid #646464;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+            border-color: #fff;
+        }
+
+        span {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 5;
+        }
+
+        &.ru {
+            span {
+                background-image: url(../img/landing/RU.png);
+            }
+            
+        }
+
+        &.gb {
+            span {
+                background-image: url(../img/landing/GB.png);
+            }
+            
+        }
+    }
+
+    &__countrylist {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: -56px;
+        padding: 5px;
+        width: 139px;
+        background: #1B2125;
+        border-radius: 3px;
+        flex-direction: column;
+        z-index: 4;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 0px;
+            width: 0px;
+            border: 5px solid transparent;
+            border-bottom: 5px solid #1B2125;
+            position: absolute;
+            left: 50%;
+            top: -10px;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__item {
+        color: #8F8E9F;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 19px;
+        cursor: pointer;
+
+        span {
+            margin-left: 5px;
+        }
+
+        &:hover {
+            color: #fff;
+            background: #030303;
+        }
+    }
+}
+
+.select__countrylist.active {
+    display: flex;
+}

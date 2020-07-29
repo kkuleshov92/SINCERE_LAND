@@ -1,0 +1,261 @@
+.products {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    counter-reset: itemCounter;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        width: 25%;
+        position: relative;
+
+        &::before {
+            content: counter(itemCounter);
+            counter-increment: itemCounter;
+            position: absolute;
+            font-family: 'Oswald', sans-serif;
+            font-size: 215px;
+            top: 10px;
+            left: 0px;
+            line-height: 1;
+            transition: .3s;
+            color: #000;
+            text-shadow:
+                2px 0px 0 #121719,
+                2px 1px 0 #121719,
+                2px 2px 0 #121719,
+                2px -2px 0 #121719,
+                2px -1px 0 #121719,
+                1px 2px 0 #121719,
+                1px -2px 0 #121719,
+                1px -1px 0 #121719,
+                1px 1px 0 #121719,
+                1px 0px 0 #121719,
+                1px 1px 0 #121719,
+                0px 0px 0 #121719,
+                0px 1px 0 #121719,
+                0px 2px 0 #121719,
+                0px -1px 0 #121719,
+                0px -2px 0 #121719,
+                -1px 0px 0 #121719,
+                -1px 1px 0 #121719,
+                -1px 2px 0 #121719,
+                -1px -1px 0 #121719,
+                -1px -2px 0 #121719,
+                -2px 0px 0 #121719,
+                -2px 1px 0 #121719,
+                -2px 2px 0 #121719,
+                -2px -1px 0 #121719,
+                -2px -2px 0 #121719;
+        }
+
+        &.show {
+            &::before {
+                color: #121719;
+                text-shadow: none;
+            }
+
+
+
+            .products {
+                &__hide {
+                    visibility: visible;
+                }
+
+                &__name {
+                    color: #fff;
+                    text-indent: 18px;
+
+                    &::before {
+                        content: '';
+                        background: $mainLinearGradient;
+                        border-radius: 2px;
+                        height: 26px;
+                        width: 2px;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+
+                &__imgLight {
+                    opacity: 1;
+                }
+            }
+
+            .ray {
+                &1 {
+
+                    &__light {
+                        animation: 3s linear 1s infinite normal lightUp;
+                    }
+                }
+            }
+        }
+    }
+
+    &__ray {
+        position: absolute;
+        bottom: 94px;
+        left: 18px;
+        width: 10px;
+        height: 60px;
+        overflow: hidden;
+    }
+
+    &__imgLight {
+        left: 10px;
+        bottom: 37px;
+        position: absolute;
+        opacity: 0;
+        transition: .3s;
+    }
+
+    &__hide {
+        visibility: hidden;
+    }
+
+
+    &__img {
+        position: relative;
+        height: 265px;
+    }
+
+    &__imgBase {
+        position: absolute;
+        bottom: 20px;
+    }
+
+    &__imgItem {
+        position: absolute;
+        bottom: 55px;
+        left: 38px;
+    }
+
+    &__name {
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 700;
+        color: #A1A0AE;
+        position: relative;
+        transition: .3s;
+        margin-top: 13px;
+
+        &::before {
+            content: '';
+            opacity: 0;
+            transition: .3s;
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #A1A0AE;
+        padding-right: 30px;
+        margin-top: 34px;
+    }
+
+    &__btn {
+        width: 176px;
+        margin-top: 30px;
+
+        &::after {
+            background: url(../img/landing/moreBtn.svg)no-repeat left calc(50% + 1px) center / auto;
+        }
+    }
+}
+
+.ray {
+    &1 {
+        position: absolute;
+        bottom: 94px;
+        left: 18px;
+        width: 10px;
+        height: 70px;
+        overflow: hidden;
+
+        &__light {
+            display: block;
+            width: 2px;
+            background: linear-gradient(180deg, #392BAD 0%, rgba(57, 43, 173, 0) 100%);
+            height: 60px;
+            margin: 0 auto;
+            transition: .3s;
+            // transform: translateY(75px);
+
+            &::before {
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: transparent;
+                border: 1px solid #fff;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateY(-100%) translateX(-50%);
+                box-sizing: border-box;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 120%;
+                height: 120%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                background: linear-gradient(180deg, #392BAD 0%, rgba(57, 43, 173, 0) 100%);
+                transform: translateX(-50%) translateY(-50%);
+                // filter: blue(3px);
+            }
+        }
+    }
+
+}
+
+@keyframes lightUp {
+    0% {
+        transform: translateY(75px);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(5px);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(5px);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+
+    90% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+}

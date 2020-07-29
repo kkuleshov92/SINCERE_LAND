@@ -1,0 +1,172 @@
+$mainLinearGradient: linear-gradient(90deg, #3A26A9 0%, #3C49E1 47.62%, #01E6F0 101.58%);
+$mainLinearGradientUp: linear-gradient(0deg, #3A26A9 0%, #3C49E1 47.62%, #01E6F0 101.58%);
+$mainLinearGradientReverse: linear-gradient(90deg, #01E6F0 0%, #3C49E1 47.62%, #3A26A9 101.58%);
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1008px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    font-size: 45px;
+    line-height: 55px;
+    letter-spacing: .03em;
+}
+
+.btn {
+    border: none;
+    height: 43px;
+    color: #fff;
+    line-height: 19px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    background: $mainLinearGradient;
+    text-indent: 30px;
+}
+
+.btn::before {
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity .5s ease-in-out;
+    position: absolute;
+    z-index: -1;
+    border-radius: 20px;
+    background: $mainLinearGradientReverse;
+    opacity: 0;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn::after {
+    content: '';
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255, 255, 255, .5);
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+.spaceLine {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    top: 0;
+    z-index: -1;
+}
+
+.spaceLine_1 {
+    left: calc(50% - 474px);
+}
+
+.spaceLine_2 {
+    left: calc(50%);
+}
+
+.spaceLine_3 {
+    left: calc(50% + 474px);
+}
+
+.gleam1, .gleam3 {
+    background: linear-gradient(180deg, rgba(247, 174, 249, 0) 0%, #F7AEF9 100%);
+}
+
+.gleam1 {
+    height: 40px;
+    width: 1px;
+    display: block;
+    left: 0;
+    position: absolute;
+    animation: 10s linear 2s infinite normal moveDown;
+    z-index: 1;
+}
+
+.gleam2 {
+    height: 40px;
+    width: 1px;
+    display: block;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(180deg, #01E6F0 0%,rgba(1, 230, 240, 0)  100%);
+    animation: 5s linear 1s infinite normal moveUp;
+}
+
+.gleam3 {
+    height: 40px;
+    width: 1px;
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    animation: 7s linear 3s infinite normal moveDown;
+}
+
+@keyframes moveDown {
+    0% {
+        top: 0%
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        bottom: 0%;
+    }
+
+    100% {
+        bottom: 100%;
+    }
+}
